@@ -8,7 +8,7 @@ class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-      this.onTermSubmit('reactjs tutorial');
+    this.onTermSubmit("reactjs tutorial");
   }
 
   onTermSubmit = async term => {
@@ -18,9 +18,9 @@ class App extends React.Component {
       }
     });
     console.log(response);
-    this.setState({ 
-        videos: response.data.items,
-        selectedVideo: response.data.items[0]
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0]
     });
   };
 
@@ -30,6 +30,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container">
+        <br/>
+        <h1>Youtube Search Client</h1>
+        <h3>React project by Pete DeJoy</h3>
         <SearchBar onFormSubmit={this.onTermSubmit} />
         <div className="ui grid">
           <div className="ui row">
